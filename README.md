@@ -17,18 +17,14 @@ Copiar código
 /meu-site
 │
 ├── index.html       # Página principal
-├── style.css        # Estilos do site
-├── script.js        # Scripts JS (se houver)
-├── assets/          # Imagens e outros arquivos estáticos
-│   ├── logo.png     # Logo do site
-│   └── ...
+│── logo.png     # Logo do site
 └── README.md        # Este arquivo
 📖 Como Usar
 Clone o Repositório:
 
 bash
 Copiar código
-git clone https://github.com/<seu-usuario>/<nome-do-repositorio>.git
+git clone https://github.com/RenanStudios/diversas-divers-es.git
 Abra o arquivo index.html no seu navegador:
 
 bash
