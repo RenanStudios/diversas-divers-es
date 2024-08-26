@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diversas Diversões - Carta do Leitor</title>
+    <style>
+        /* Importando a fonte Shag Lounge */
+        @import url('https://fonts.googleapis.com/css2?family=Shag+Lounge&display=swap');
+
+        body {
+            font-family: 'Shag Lounge', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #8e44ad, #2c3e50);
+            color: #fff;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        header {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+        }
+        header img {
+            width: 150px;
+        }
+        form {
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+            width: 100%;
+            max-width: 500px;
+        }
+        label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+        input[type="text"],
+        input[type="email"],
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: none;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="sua_logo.png" alt="Logo Diversas Diversões">
+    </header>
+
+    <form id="contact-form">
+        <h1>Diversas Diversões - Carta do Leitor</h1>
+        <p>Envie sua mensagem para nós! Estamos ansiosos para ouvir de você.</p>
+        <label for="name">Nome:</label>
+        <input type="text" id="name" name="name" placeholder="Seu nome" required>
+
+        <label for="email">E-mail:</label>
+        <input type="email" id="email" name="email" placeholder="Seu e-mail" required>
+
+        <label for="message">Mensagem:</label>
+        <textarea id="message" name="message" rows="6" placeholder="Sua mensagem" required></textarea>
+
+        <input type="submit" value="Enviar">
+    </form>
+
+    <!-- Adicione o SDK do EmailJS -->
+    <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function() {
+            emailjs.init("b84PQjIYqNMA98ffD");  // Substitua pelo seu User ID do EmailJS
+        })();
+
+        document.getElementById('contact-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            emailjs.sendForm('service_jgl1yvs', 'template_8x0p5ly', this)
+                .then(function() {
+                    alert('Mensagem enviada com sucesso!');
+                }, function(error) {
+                    alert('Erro ao enviar mensagem: ' + JSON.stringify(error));
+                });
+        });
+    </script>
+</body>
+</html>
